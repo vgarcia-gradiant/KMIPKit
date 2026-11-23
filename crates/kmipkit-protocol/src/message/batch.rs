@@ -128,6 +128,12 @@ pub struct ResponseBatchItemView<'a> {
 }
 
 impl<'a> ResponseBatchItemView<'a> {
+    /// Protocol version of the enclosing response.
+    #[must_use]
+    pub fn protocol_version(self) -> crate::ProtocolVersion {
+        self.message.header().protocol_version()
+    }
+
     pub(super) const fn new(message: &'a ResponseMessage, root_index: usize) -> Self {
         Self {
             message,

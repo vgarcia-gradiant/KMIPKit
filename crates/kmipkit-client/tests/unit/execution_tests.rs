@@ -163,6 +163,8 @@ fn candidate_associate_response(
         .map(|item| BatchIdentity {
             operation: item.operation,
             unique_batch_item_id: item.unique_batch_item_id.clone(),
+            projection: None,
+            query_functions: Vec::new(),
             response_context: None,
         })
         .collect::<Vec<_>>();
@@ -172,6 +174,8 @@ fn candidate_associate_response(
         .map(|item| BatchIdentity {
             operation: item.operation,
             unique_batch_item_id: item.unique_batch_item_id.clone(),
+            projection: None,
+            query_functions: Vec::new(),
             response_context: None,
         })
         .collect::<Vec<_>>();

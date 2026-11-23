@@ -82,11 +82,15 @@ fn response_association_rejects_duplicate_request_id_matches() {
         BatchIdentity {
             operation: 0x0000_001E,
             unique_batch_item_id: Some(b"duplicate-request-id".to_vec()),
+            projection: None,
+            query_functions: Vec::new(),
             response_context: None,
         },
         BatchIdentity {
             operation: 0x0000_001E,
             unique_batch_item_id: Some(b"duplicate-request-id".to_vec()),
+            projection: None,
+            query_functions: Vec::new(),
             response_context: None,
         },
     ];
@@ -94,11 +98,15 @@ fn response_association_rejects_duplicate_request_id_matches() {
         BatchIdentity {
             operation: 0x0000_001E,
             unique_batch_item_id: Some(b"duplicate-request-id".to_vec()),
+            projection: None,
+            query_functions: Vec::new(),
             response_context: None,
         },
         BatchIdentity {
             operation: 0x0000_001E,
             unique_batch_item_id: Some(b"different-response-id".to_vec()),
+            projection: None,
+            query_functions: Vec::new(),
             response_context: None,
         },
     ];
@@ -114,11 +122,15 @@ fn response_association_rejects_an_unmatched_batch_item_identifier() {
     let requests = [BatchIdentity {
         operation: 0x0000_001E,
         unique_batch_item_id: Some(b"requested-id".to_vec()),
+        projection: None,
+        query_functions: Vec::new(),
         response_context: None,
     }];
     let responses = [BatchIdentity {
         operation: 0x0000_001E,
         unique_batch_item_id: Some(b"returned-id".to_vec()),
+        projection: None,
+        query_functions: Vec::new(),
         response_context: None,
     }];
 
@@ -134,17 +146,23 @@ fn partial_stop_or_undo_responses_keep_request_id_associations() {
         BatchIdentity {
             operation: 0x0000_001E,
             unique_batch_item_id: Some(b"request-0".to_vec()),
+            projection: None,
+            query_functions: Vec::new(),
             response_context: None,
         },
         BatchIdentity {
             operation: 0x0000_001E,
             unique_batch_item_id: Some(b"request-1".to_vec()),
+            projection: None,
+            query_functions: Vec::new(),
             response_context: None,
         },
     ];
     let responses = [BatchIdentity {
         operation: 0x0000_001E,
         unique_batch_item_id: Some(b"request-0".to_vec()),
+        projection: None,
+        query_functions: Vec::new(),
         response_context: None,
     }];
 
@@ -160,6 +178,8 @@ fn partial_stop_or_undo_responses_keep_request_id_associations() {
     let later_response = [BatchIdentity {
         operation: 0x0000_001E,
         unique_batch_item_id: Some(b"request-1".to_vec()),
+        projection: None,
+        query_functions: Vec::new(),
         response_context: None,
     }];
     assert_eq!(
@@ -170,6 +190,8 @@ fn partial_stop_or_undo_responses_keep_request_id_associations() {
     let unknown_response = [BatchIdentity {
         operation: 0x0000_001E,
         unique_batch_item_id: Some(b"unknown-id".to_vec()),
+        projection: None,
+        query_functions: Vec::new(),
         response_context: None,
     }];
     assert_eq!(
@@ -180,6 +202,8 @@ fn partial_stop_or_undo_responses_keep_request_id_associations() {
     let wrong_operation = [BatchIdentity {
         operation: 0x0000_0020,
         unique_batch_item_id: Some(b"request-0".to_vec()),
+        projection: None,
+        query_functions: Vec::new(),
         response_context: None,
     }];
     assert_eq!(
@@ -191,11 +215,15 @@ fn partial_stop_or_undo_responses_keep_request_id_associations() {
         BatchIdentity {
             operation: 0x0000_001E,
             unique_batch_item_id: Some(b"request-0".to_vec()),
+            projection: None,
+            query_functions: Vec::new(),
             response_context: None,
         },
         BatchIdentity {
             operation: 0x0000_001E,
             unique_batch_item_id: Some(b"request-0".to_vec()),
+            projection: None,
+            query_functions: Vec::new(),
             response_context: None,
         },
     ];
